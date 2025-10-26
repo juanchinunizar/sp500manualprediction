@@ -6,7 +6,7 @@ library(TTR)
 # 1. Carga y Preparación de Datos
 
 # Cargamos los datos del CSV.
-datos <- read.csv("actividad2/SP.csv")
+datos <- read.csv("SP.csv")
 # Ordenamos los datos por fecha, de más antiguo a más reciente.
 datos <- datos[order(as.Date(datos$Date)), ]
 
@@ -146,3 +146,4 @@ precision_direccional <- mean(comparacion_df$Acierto, na.rm = TRUE)
 print(paste0("Porcentaje de Éxito: ", 
              round(precision_direccional * 100, 3), 
              "%"))
+
