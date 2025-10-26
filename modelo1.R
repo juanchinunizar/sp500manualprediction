@@ -2,7 +2,7 @@
 library(randomForest)
 
 # Leemos los datos desde nuestro archivo CSV.
-datos <- read.csv("actividad2/SP.csv")
+datos <- read.csv("SP.csv")
 
 # Ordenamos todos los datos por fecha, del más antiguo al más reciente.
 datos <- datos[order(as.Date(datos$Date)),]
@@ -52,4 +52,5 @@ legend("topleft", legend = c("Valor Real", "Predicción"), col = c("blue", "red"
 importancia <- importance(rf_modelo)
 
 # Mostramos la puntuación de importancia de cada variable.
+
 print(importancia)
