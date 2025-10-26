@@ -2,7 +2,7 @@
 library(dplyr)
 library(randomForest)
 
-datos <- read.csv("actividad2/SP.csv")
+datos <- read.csv("SP.csv")
 datos <- datos[order(as.Date(datos$Date)),]
 
 # Iniciamos una cadena de operaciones ('pipe') sobre el dataframe 'datos' usando dplyr.
@@ -64,4 +64,5 @@ resultados <- data.frame(
 plot(resultados$Fecha, resultados$Real, type = 'l', col = 'blue', ylim=range(c(resultados$Real, resultados$Prediccion)),
      xlab = "Fecha", ylab = "Precio Real", main = "Modelo 2: Predicción de Cambios")
 lines(resultados$Fecha, resultados$Prediccion, col = 'red', lty = 2)
+
 legend("topleft", legend = c("Valor Real", "Predicción"), col = c("blue", "red"), lty = 1:2)
